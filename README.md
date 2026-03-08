@@ -19,17 +19,26 @@ scoop update cnb
 
 ## 终端补全
 
-安装后可启用 PowerShell 命令行补全：
+安装后可启用 PowerShell 命令行补全。在 PowerShell 中执行：
 
 ```pwsh
-# 添加到 PowerShell 配置文件（永久生效）
-cnb completion powershell >> $PROFILE
+# 启用菜单补全（Tab 显示候选列表和描述）
+Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
-# 或仅在当前会话中启用
+# 加载 cnb 补全脚本
 cnb completion powershell | Out-String | Invoke-Expression
 ```
 
-重新打开终端后即可使用 `Tab` 键补全 cnb 的子命令和参数。
+若要每次启动自动生效，将上述内容写入 PowerShell 配置文件：
+
+```pwsh
+# 查看配置文件路径
+$PROFILE
+
+# 编辑配置文件（如果不存在会自动创建）
+if (!(Test-Path $PROFILE)) { New-Item -Path $PROFILE -Force }
+notepad $PROFILE
+```
 
 ## 相关链接
 
