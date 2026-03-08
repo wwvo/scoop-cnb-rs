@@ -1,0 +1,39 @@
+name: 🐛 Bug 报告
+description: 报告 Scoop 安装/更新 cnb CLI 时的问题
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: checkboxes
+    attributes:
+      label: 前置检查
+      options:
+        - label: 我已搜索过现有 Issue，确认没有重复
+          required: true
+        - label: 我已使用最新版本的 Scoop
+          required: true
+  - type: input
+    attributes:
+      label: 包名
+      description: 出问题的包名（安装名）
+      placeholder: "cnb / cnb-msvc / cnb-gnu"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 问题描述
+      description: 清晰描述期望行为和实际行为
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 复现步骤
+      render: console
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Scoop 版本
+      description: "粘贴 `scoop --version` 的输出"
+      render: console
+    validations:
+      required: true
