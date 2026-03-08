@@ -13,17 +13,5 @@
     "bin": [
         "cnb.exe",
         "git-cnb.exe"
-    ],
-    "checkver": {
-        "url": "https://cnb.cool/wwvo/cnb-cli/cnb/-/releases",
-        "regex": "releases/tag/v([\\d.]+)"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://cnb.cool/wwvo/cnb-cli/cnb/-/releases/download/v$version/cnb-v$version-x86_64-pc-windows-msvc.zip"
-            }
-        },
-        "extract_dir": "cnb-v$version-x86_64-pc-windows-msvc"
-    }
+    ]
 }
