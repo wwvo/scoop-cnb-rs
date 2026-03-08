@@ -17,6 +17,20 @@ scoop install cnb-cli/cnb
 scoop update cnb
 ```
 
+## 终端补全
+
+安装后可启用 PowerShell 命令行补全：
+
+```pwsh
+# 添加到 PowerShell 配置文件（永久生效）
+cnb completion powershell >> $PROFILE
+
+# 或仅在当前会话中启用
+cnb completion powershell | Out-String | Invoke-Expression
+```
+
+重新打开终端后即可使用 `Tab` 键补全 cnb 的子命令和参数。
+
 ## 相关链接
 
 - [CNB CLI 文档](https://cnb.wwvo.fun)
