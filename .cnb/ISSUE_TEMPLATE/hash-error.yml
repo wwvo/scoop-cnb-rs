@@ -1,0 +1,17 @@
+name: 🔢 Hash 校验错误
+description: 报告包的 hash 值不匹配
+labels: ["bug"]
+body:
+  - type: checkboxes
+    attributes:
+      label: 前置检查
+      options:
+        - label: 我已使用最新版本的 Scoop 和 Bucket
+          required: true
+  - type: input
+    attributes:
+      label: 包名和版本
+      description: 出错的包名和版本号
+      placeholder: "cnb@0.4.1"
+    validations:
+      required: true
