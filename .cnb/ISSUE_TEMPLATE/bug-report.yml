@@ -1,5 +1,5 @@
 name: 🐛 Bug 报告
-description: 报告 Scoop 安装/更新 cnb CLI 时的问题
+description: 报告 Scoop 安装/更新 CNB CLI 时的问题
 title: "[Bug]: "
 labels: ["bug"]
 body:

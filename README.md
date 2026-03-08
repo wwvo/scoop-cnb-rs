@@ -19,5 +19,5 @@ scoop update cnb
 
 ## 相关链接
 
-- [cnb CLI 文档](https://cnb.wwvo.fun)
-- [cnb CLI 源码](https://cnb.cool/wwvo/cnb-cli/cnb)
+- [CNB CLI 文档](https://cnb.wwvo.fun)
+- [CNB CLI 源码](https://cnb.cool/wwvo/cnb-cli/cnb)
