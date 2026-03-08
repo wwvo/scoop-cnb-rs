@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """格式化 Scoop manifest JSON 文件（4 空格缩进）。
 
-用法: python bin/formatjson.py [manifest_name]
+用法：python bin/formatjson.py [manifest_name]
   不指定 manifest_name 则格式化 bucket/ 下所有 .json 文件。
 """
 

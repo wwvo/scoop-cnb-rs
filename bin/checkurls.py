@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """检查 Scoop manifest 中的下载 URL 是否可访问。
 
-用法: python bin/checkurls.py [manifest_name]
+用法：python bin/checkurls.py [manifest_name]
   不指定 manifest_name 则检查 bucket/ 下所有 .json 文件。
 """
 

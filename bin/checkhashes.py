@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """验证 Scoop manifest 中的文件 hash 是否正确。
 
-用法: python bin/checkhashes.py [manifest_name]
+用法：python bin/checkhashes.py [manifest_name]
   不指定 manifest_name 则检查 bucket/ 下所有 .json 文件。
 """
 
@@ -27,7 +27,7 @@ def get_urls_and_hashes(manifest: dict) -> list[tuple[str, str]]:
 
 
 def check_hash(url: str, expected_hash: str) -> tuple[bool, str]:
-    """下载文件并计算 SHA256，返回 (是否匹配, 实际 hash)。"""
+    """下载文件并计算 SHA256，返回 (是否匹配，实际 hash)。"""
     try:
         req = urllib.request.Request(url, method="GET")
         req.add_header("User-Agent", "Scoop/1.0 (checkhashes.py)")
@@ -41,7 +41,7 @@ def check_hash(url: str, expected_hash: str) -> tuple[bool, str]:
             actual = sha256.hexdigest()
             return actual == expected_hash, actual
     except Exception as e:
-        return False, f"下载失败: {e}"
+        return False, f"下载失败：{e}"
 
 
 def main():
@@ -67,13 +67,13 @@ def main():
         print(f"\n检查 {manifest_path.name}:")
         for url, expected in pairs:
             print(f"  URL: {url}")
-            print(f"  期望: {expected}")
+            print(f"  期望：{expected}")
             ok, actual = check_hash(url, expected)
             if ok:
-                print(f"  结果: ✅ 匹配")
+                print(f"  结果：✅ 匹配")
             else:
-                print(f"  实际: {actual}")
-                print(f"  结果: ❌ 不匹配")
+                print(f"  实际：{actual}")
+                print(f"  结果：❌ 不匹配")
                 has_error = True
 
     return 1 if has_error else 0
