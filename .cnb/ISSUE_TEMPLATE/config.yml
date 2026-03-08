@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: cnb CLI 源码仓库
+    url: https://cnb.cool/wwvo/cnb-cli/cnb/-/issues
+    about: cnb CLI 本身的 Bug 请到源码仓库反馈
