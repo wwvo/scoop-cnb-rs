@@ -1,0 +1,29 @@
+{
+    "version": "0.4.1",
+    "description": "An unofficial command line tool for CNB (cnb.cool) (GNU toolchain)",
+    "homepage": "https://cnb.wwvo.fun",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://cnb.cool/wwvo/cnb-cli/cnb/-/releases/download/v0.4.1/cnb-v0.4.1-x86_64-pc-windows-gnu.zip",
+            "hash": "b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3"
+        }
+    },
+    "extract_dir": "cnb-v0.4.1-x86_64-pc-windows-gnu",
+    "bin": [
+        "cnb.exe",
+        "git-cnb.exe"
+    ],
+    "checkver": {
+        "url": "https://cnb.cool/wwvo/cnb-cli/cnb/-/releases",
+        "regex": "releases/tag/v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://cnb.cool/wwvo/cnb-cli/cnb/-/releases/download/v$version/cnb-v$version-x86_64-pc-windows-gnu.zip"
+            }
+        },
+        "extract_dir": "cnb-v$version-x86_64-pc-windows-gnu"
+    }
+}
