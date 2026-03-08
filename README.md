@@ -1,8 +1,8 @@
 # scoop-cnb-cli
 
-[cnb CLI](https://cnb.cool/wwvo/cnb-cli/cnb) 的 [Scoop](https://scoop.sh) Bucket。
+[CNB CLI](https://cnb.cool/wwvo/cnb-cli/cnb) 的 [Scoop](https://scoop.sh) Bucket。
 
-cnb 是一个非官方的 [CNB (cnb.cool)](https://cnb.cool) 命令行工具。
+CNB CLI 是一个非官方的 [CNB (cnb.cool)](https://cnb.cool) 命令行工具。
 
 ## 安装
 
