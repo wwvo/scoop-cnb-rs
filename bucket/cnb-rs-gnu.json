@@ -13,5 +13,6 @@
   "bin": [
     "cnb-rs.exe",
     "git-cnb-rs.exe"
-  ]
+  ],
+  "notes": "In order to replace cnb commands use `Invoke-Expression (&cnb-rs hook)` in your Powershell profile."
 }
