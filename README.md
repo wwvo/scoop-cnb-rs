@@ -8,13 +8,13 @@ CNB CLI 是一个非官方的 [CNB (cnb.cool)](https://cnb.cool) 命令行工具
 
 ```pwsh
 scoop bucket add cnb-cli https://cnb.cool/wwvo/cnb-cli/scoop-cnb-cli.git
-scoop install cnb-cli/cnb
+scoop install cnb-cli/cnb-rs
 ```
 
 ## 更新
 
 ```pwsh
-scoop update cnb
+scoop update cnb-rs
 ```
 
 ## 终端补全
@@ -25,8 +25,8 @@ scoop update cnb
 # 启用菜单补全（Tab 显示候选列表和描述）
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
-# 加载 cnb 补全脚本
-cnb completion powershell | Out-String | Invoke-Expression
+# 加载 cnb-rs 补全脚本
+cnb-rs completion powershell | Out-String | Invoke-Expression
 ```
 
 若要每次启动自动生效，将上述内容写入 PowerShell 配置文件：
