@@ -5,7 +5,7 @@
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/wwvo/cnb-cli-rs/releases/download/v0.5.0/cnb-rs-v0.5.0-x86_64-pc-windows-gnu.zip",
+      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.5.0/cnb-rs-v0.5.0-x86_64-pc-windows-gnu.zip",
       "hash": "64f84afa4b68935aaf9b26f1c6b8fa7995ba87621d5785b1546ce6f9b687b9a0"
     }
   },
