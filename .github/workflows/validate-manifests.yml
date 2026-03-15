@@ -1,0 +1,46 @@
+name: Validate Scoop Manifests
+
+on:
+  pull_request:
+    paths:
+      - "bucket/**"
+      - "README.md"
+      - "bin/**"
+      - ".github/workflows/**"
+  push:
+    branches:
+      - main
+    paths:
+      - "bucket/**"
+      - "README.md"
+      - "bin/**"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+concurrency:
+  group: validate-manifests-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  validate:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Validate manifest JSON and README invariants
+        shell: pwsh
+        run: python bin/validate_ci.py
+
+      - name: Validate manifest URLs
+        shell: pwsh
+        run: python bin/check.py --url-only

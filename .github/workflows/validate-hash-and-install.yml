@@ -1,0 +1,55 @@
+name: Validate Scoop Hash And Install
+
+on:
+  pull_request:
+    paths:
+      - "bucket/**"
+      - "README.md"
+      - "bin/**"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+concurrency:
+  group: validate-hash-install-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  validate:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Validate manifest URLs and hashes
+        shell: pwsh
+        run: python bin/check.py
+
+      - name: Install Scoop
+        shell: pwsh
+        run: |
+          Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+          Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+          scoop --version
+
+      - name: Add local bucket
+        shell: pwsh
+        run: scoop bucket add local-bucket "$PWD"
+
+      - name: Install and verify packages
+        shell: pwsh
+        run: |
+          $packages = @("cnb-rs", "cnb-rs-msvc", "cnb-rs-gnu")
+          foreach ($package in $packages) {
+            scoop install "local-bucket/$package"
+            cnb-rs --version
+            scoop uninstall $package
+          }
