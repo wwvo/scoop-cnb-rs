@@ -33,20 +33,17 @@ jobs:
         shell: pwsh
         run: python bin/check.py
 
-      - name: Install Scoop
+      - name: Install Scoop and verify packages
         shell: pwsh
         run: |
           Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-          Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+          $installer = Join-Path $env:USERPROFILE "install.ps1"
+          Invoke-WebRequest "https://raw.githubusercontent.com/ScoopInstaller/Install/master/install.ps1" -UseBasicParsing -OutFile $installer
+          & $installer -RunAsAdmin
           scoop --version
 
-      - name: Add local bucket
-        shell: pwsh
-        run: scoop bucket add local-bucket "$PWD"
+          scoop bucket add local-bucket "$PWD"
 
-      - name: Install and verify packages
-        shell: pwsh
-        run: |
           $packages = @("cnb-rs", "cnb-rs-msvc", "cnb-rs-gnu")
           foreach ($package in $packages) {
             scoop install "local-bucket/$package"
