@@ -16,6 +16,32 @@ from pathlib import Path
 
 BUCKET_DIR = Path(__file__).resolve().parent.parent / "bucket"
 
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except AttributeError:
+    pass
+
+
+def supports_output(text: str) -> bool:
+    """检查当前 stdout 编码是否支持输出指定文本。"""
+    encoding = sys.stdout.encoding or "utf-8"
+    try:
+        text.encode(encoding)
+        return True
+    except UnicodeEncodeError:
+        return False
+
+
+USE_EMOJI = supports_output("📦📄✅❌⚠️")
+ICONS = {
+    "package": "📦" if USE_EMOJI else "[PKG]",
+    "file": "📄" if USE_EMOJI else "[FILE]",
+    "ok": "✅" if USE_EMOJI else "[OK]",
+    "fail": "❌" if USE_EMOJI else "[FAIL]",
+    "warn": "⚠️" if USE_EMOJI else "[WARN]",
+}
+
 
 def get_urls_and_hashes(manifest: dict) -> list[tuple[str, str]]:
     """从 manifest 中提取所有 (url, hash) 对。"""
@@ -87,18 +113,18 @@ def main():
             continue
 
         print(f"\n{'=' * 60}")
-        print(f"📦 {manifest_path.name}")
+        print(f"{ICONS['package']} {manifest_path.name}")
         print(f"{'=' * 60}")
 
         for url, expected in pairs:
             filename = url.rsplit("/", 1)[-1]
-            print(f"\n  📄 {filename}")
+            print(f"\n  {ICONS['file']} {filename}")
             print(f"  URL：{url}")
 
             # 检查 URL
             if url_only or check_both:
                 ok, status = check_url(url)
-                icon = "✅" if ok else "❌"
+                icon = ICONS["ok"] if ok else ICONS["fail"]
                 print(f"  URL 检查：{icon} [{status}]")
                 if not ok:
                     has_error = True
@@ -108,17 +134,17 @@ def main():
                 print(f"  期望 hash：{expected}")
                 ok, actual = check_hash(url, expected)
                 if ok:
-                    print(f"  Hash 检查：✅ 匹配")
+                    print(f"  Hash 检查：{ICONS['ok']} 匹配")
                 else:
                     print(f"  实际 hash：{actual}")
-                    print(f"  Hash 检查：❌ 不匹配")
+                    print(f"  Hash 检查：{ICONS['fail']} 不匹配")
                     has_error = True
 
     print()
     if has_error:
-        print("⚠️  存在错误，请检查上述输出。")
+        print(f"{ICONS['warn']} 存在错误，请检查上述输出。")
     else:
-        print("✅ 全部通过！")
+        print(f"{ICONS['ok']} 全部通过！")
 
     return 1 if has_error else 0
 
