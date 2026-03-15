@@ -1,0 +1,21 @@
+x-pr-check-job: &pr-check-job
+  - name: pr-check
+    runner:
+      cpus: 1
+    stages:
+      - name: 校验 bucket 元数据
+        image: docker.cnb.cool/wwvo/dev-env/python:latest
+        script: python bin/validate_ci.py
+      - name: 校验 manifest URL 可访问性
+        image: docker.cnb.cool/wwvo/dev-env/python:latest
+        script: python bin/check.py --url-only
+      - name: 校验 manifest hash
+        image: docker.cnb.cool/wwvo/dev-env/python:latest
+        script: python bin/check.py --hash-only
+      - name: PR 检查完成
+        type: cnb:resolve
+        options:
+          key: pr-check-ready
+
+main:
+  pull_request: *pr-check-job

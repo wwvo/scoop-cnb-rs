@@ -1,0 +1,12 @@
+main:
+  pull_request.mergeable:
+    - stages:
+        - name: 等待 PR 轻量检查通过
+          type: cnb:await
+          options:
+            key: pr-check-ready
+        - name: automerge
+          type: git:auto-merge
+          options:
+            mergeType: squash
+            removeSourceBranch: true
