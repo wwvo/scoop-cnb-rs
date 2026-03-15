@@ -1,0 +1,20 @@
+x-sync-github-main-job: &sync-github-main-job
+  - name: sync-github-main
+    runner:
+      cpus: 1
+    stages:
+      - name: 同步 main 到 GitHub
+        image: tencentcom/git-sync
+        imports:
+          - https://cnb.cool/prevailna/secrets/-/blob/main/github-sync/scoop-cnb-rs.yml
+        settings:
+          target_url: https://github.com/wwvo/scoop-cnb-rs.git
+          auth_type: https
+          username: ${GITHUB_SYNC_USERNAME}
+          password: ${GITHUB_SYNC_TOKEN}
+          branch: main
+
+main:
+  push: *sync-github-main-job
+
+web_trigger_sync-github: *sync-github-main-job

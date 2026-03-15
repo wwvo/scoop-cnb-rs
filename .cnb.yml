@@ -1,37 +1,5 @@
-x-sync-main-job: &sync-main-job
-  - name: sync-github-main
-    runner:
-      cpus: 1
-    stages:
-      - name: 同步 main 到 GitHub
-        image: tencentcom/git-sync
-        imports:
-          - https://cnb.cool/prevailna/secrets/-/blob/main/github-sync/scoop-cnb-rs.yml
-        settings:
-          target_url: https://github.com/wwvo/scoop-cnb-rs.git
-          auth_type: https
-          username: ${GITHUB_SYNC_USERNAME}
-          password: ${GITHUB_SYNC_TOKEN}
-          branch: main
-
-x-sync-current-branch-job: &sync-current-branch-job
-  - name: sync-github-branch
-    runner:
-      cpus: 1
-    stages:
-      - name: 同步当前分支到 GitHub
-        image: tencentcom/git-sync
-        imports:
-          - https://cnb.cool/prevailna/secrets/-/blob/main/github-sync/scoop-cnb-rs.yml
-        settings:
-          target_url: https://github.com/wwvo/scoop-cnb-rs.git
-          auth_type: https
-          username: ${GITHUB_SYNC_USERNAME}
-          password: ${GITHUB_SYNC_TOKEN}
-          branch: ${CNB_BRANCH}
-
-main:
-  push: *sync-main-job
+include:
+  - .cnb/workflows/sync-github-main.yml
 
 $:
   vscode:
@@ -40,5 +8,3 @@ $:
       services:
         - vscode
         - docker
-  push: *sync-current-branch-job
-  web_trigger_sync-github: *sync-current-branch-job

@@ -1,5 +1,5 @@
 branch:
   - buttons:
-      - name: 同步当前分支到 GitHub
-        description: 将当前分支同步到 GitHub mirror，用于触发 GitHub Actions 检测
+      - name: 同步 main 到 GitHub
+        description: 手动将 main 分支同步到 GitHub mirror
         event: web_trigger_sync-github
