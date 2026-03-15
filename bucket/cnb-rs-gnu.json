@@ -1,18 +1,17 @@
 {
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "An unofficial command line tool for CNB (cnb.cool) (GNU toolchain)",
   "homepage": "https://cnb.wwvo.fun",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://cnb.cool/wwvo/cnb-cli/cnb/-/releases/download/v0.4.1/cnb-rs-v0.4.1-x86_64-pc-windows-gnu.zip",
-      "hash": "b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3"
+      "url": "https://github.com/wwvo/cnb-cli-rs/releases/download/v0.5.0/cnb-rs-v0.5.0-x86_64-pc-windows-gnu.zip",
+      "hash": "64f84afa4b68935aaf9b26f1c6b8fa7995ba87621d5785b1546ce6f9b687b9a0"
     }
   },
-  "extract_dir": "cnb-rs-v0.4.1-x86_64-pc-windows-gnu",
+  "extract_dir": "cnb-rs-v0.5.0-x86_64-pc-windows-gnu",
   "bin": [
-    "cnb-rs.exe",
-    "git-cnb-rs.exe"
+    "cnb-rs.exe"
   ],
-  "notes": "In order to replace cnb commands use `Invoke-Expression (&cnb-rs hook)` in your Powershell profile."
+  "notes": "The command has been renamed from `cnb` to `cnb-rs`. To keep using `cnb`, add `Set-Alias cnb cnb-rs` to your PowerShell profile."
 }

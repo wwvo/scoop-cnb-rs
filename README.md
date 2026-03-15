@@ -1,20 +1,30 @@
-# scoop-cnb-cli
+# scoop-cnb-rs
 
-[CNB CLI](https://cnb.cool/wwvo/cnb-cli/cnb) 的 [Scoop](https://scoop.sh) Bucket。
+[cnb-rs](https://cnb.cool/wwvo/cnb-rs/cnb) 的 [Scoop](https://scoop.sh) Bucket。
 
-CNB CLI 是一个非官方的 [CNB (cnb.cool)](https://cnb.cool) 命令行工具。
+`cnb-rs` 是一个非官方的 [CNB (cnb.cool)](https://cnb.cool) 命令行工具。
 
 ## 安装
 
 ```pwsh
-scoop bucket add cnb-cli https://cnb.cool/wwvo/cnb-cli/scoop-cnb-cli.git
-scoop install cnb-cli/cnb-rs
+scoop bucket add cnb-rs https://cnb.cool/wwvo/cnb-rs/scoop-cnb-rs.git
+scoop install cnb-rs/cnb-rs
 ```
 
 ## 更新
 
 ```pwsh
-scoop update cnb-rs
+scoop update cnb-rs/cnb-rs
+```
+
+## 迁移提示
+
+主仓库的命令入口已从 `cnb` 改为 `cnb-rs`。
+
+如果你仍希望在 PowerShell 中继续输入 `cnb`，请在 PowerShell 配置文件中添加：
+
+```pwsh
+Set-Alias cnb cnb-rs
 ```
 
 ## 终端补全
@@ -43,4 +53,4 @@ notepad $PROFILE
 ## 相关链接
 
 - [CNB CLI 文档](https://cnb.wwvo.fun)
-- [CNB CLI 源码](https://cnb.cool/wwvo/cnb-cli/cnb)
+- [CNB CLI 源码](https://cnb.cool/wwvo/cnb-rs/cnb)
