@@ -1,6 +1,6 @@
 # scoop-cnb-rs
 
-[cnb-rs](https://cnb.cool/wwvo/cnb-rs/cnb) 的 [Scoop](https://scoop.sh) Bucket。
+[cnb-rs](https://cnb.cool/wwvo/cnb-rs/cnb-rs) 的 [Scoop](https://scoop.sh) Bucket。
 
 `cnb-rs` 是一个非官方的 [CNB (cnb.cool)](https://cnb.cool) 命令行工具。
 
@@ -53,4 +53,4 @@ notepad $PROFILE
 ## 相关链接
 
 - [CNB CLI 文档](https://cnb.wwvo.fun)
-- [CNB CLI 源码](https://cnb.cool/wwvo/cnb-rs/cnb)
+- [CNB CLI 源码](https://cnb.cool/wwvo/cnb-rs/cnb-rs)
