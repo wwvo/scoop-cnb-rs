@@ -42,7 +42,12 @@ jobs:
           & $installer -RunAsAdmin
           scoop --version
 
-          scoop bucket add local-bucket "$PWD"
+          $localBucketRoot = Join-Path $env:USERPROFILE "scoop\buckets\local-bucket"
+          if (Test-Path $localBucketRoot) {
+            Remove-Item -Recurse -Force $localBucketRoot
+          }
+          New-Item -ItemType Directory -Force -Path $localBucketRoot | Out-Null
+          Copy-Item -Recurse -Force (Join-Path $PWD "bucket") $localBucketRoot
 
           $packages = @("cnb-rs", "cnb-rs-msvc", "cnb-rs-gnu")
           foreach ($package in $packages) {
