@@ -7,9 +7,13 @@
     "64bit": {
       "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.5.0/cnb-rs-v0.5.0-x86_64-pc-windows-gnu.zip",
       "hash": "64f84afa4b68935aaf9b26f1c6b8fa7995ba87621d5785b1546ce6f9b687b9a0"
+    },
+    "arm64": {
+      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.5.0/cnb-rs-v0.5.0-aarch64-pc-windows-gnullvm.zip",
+      "hash": "177c39fd274d8d7af656ce4bb9bcbd03c8dec9e4e22ce0197d67637f4fe37909"
     }
   },
-  "extract_dir": "cnb-rs-v0.5.0-x86_64-pc-windows-gnu",
+  "extract_dir": "cnb-rs-v0.5.0-$matchArch-pc-windows-gnu$matchSuffix",
   "bin": [
     "cnb-rs.exe"
   ],
