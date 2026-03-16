@@ -4,17 +4,11 @@ on:
   pull_request:
     paths:
       - "bucket/**"
-      - "README.md"
-      - "bin/**"
-      - ".github/workflows/**"
   push:
     branches:
       - main
     paths:
       - "bucket/**"
-      - "README.md"
-      - "bin/**"
-      - ".github/workflows/**"
   workflow_dispatch:
 
 concurrency:
