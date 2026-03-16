@@ -1,7 +1,6 @@
 include:
   - .cnb/workflows/sync-github-main.yml
   - .cnb/workflows/pr-check.yml
-  - .cnb/workflows/automerge.yml
 
 $:
   vscode:

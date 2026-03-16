@@ -1,23 +1,25 @@
+x-pr-check-paths: &pr-check-paths
+  - "bucket/**"
+
 x-pr-check-job: &pr-check-job
   name: pr-check
-  ifModify:
-    - "bucket/**"
-    - "bin/**"
-    - ".cnb.yml"
-    - ".cnb/**"
   runner:
     cpus: 1
   stages:
     - name: 校验 bucket 元数据
+      ifModify: *pr-check-paths
       image: docker.cnb.cool/wwvo/dev-env/python:latest
       script: python bin/validate_ci.py
     - name: 校验 manifest URL 可访问性
+      ifModify: *pr-check-paths
       image: docker.cnb.cool/wwvo/dev-env/python:latest
       script: python bin/check.py --url-only
     - name: 校验 manifest hash
+      ifModify: *pr-check-paths
       image: docker.cnb.cool/wwvo/dev-env/python:latest
       script: python bin/check.py --hash-only
     - name: PR 检查完成
+      ifModify: *pr-check-paths
       type: cnb:resolve
       options:
         key: pr-check-ready
@@ -25,3 +27,10 @@ x-pr-check-job: &pr-check-job
 main:
   pull_request:
     - <<: *pr-check-job
+  pull_request.mergeable:
+    - stages:
+        - name: automerge
+          type: git:auto-merge
+          options:
+            mergeType: squash
+            removeSourceBranch: true
