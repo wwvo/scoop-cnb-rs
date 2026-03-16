@@ -2,6 +2,7 @@
 
 [![Validate Scoop Manifests](https://github.com/wwvo/scoop-cnb-rs/actions/workflows/validate-manifests.yml/badge.svg?branch=main)](https://github.com/wwvo/scoop-cnb-rs/actions/workflows/validate-manifests.yml)
 [![Validate Scoop Hash And Install](https://github.com/wwvo/scoop-cnb-rs/actions/workflows/validate-hash-and-install.yml/badge.svg?branch=main)](https://github.com/wwvo/scoop-cnb-rs/actions/workflows/validate-hash-and-install.yml)
+[![.cnb.yml](https://cnb.cool/wwvo/cnb-rs/scoop-cnb-rs/-/badge/git/latest/ci/pipeline-as-code)](https://cnb.cool/wwvo/cnb-rs/scoop-cnb-rs/-/git)
 
 [cnb-rs](https://cnb.cool/wwvo/cnb-rs/cnb-rs) 的 [Scoop](https://scoop.sh) Bucket。
 
