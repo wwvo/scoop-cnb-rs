@@ -1,5 +1,8 @@
 # scoop-cnb-rs
 
+[![Validate Scoop Manifests](https://github.com/wwvo/scoop-cnb-rs/actions/workflows/validate-manifests.yml/badge.svg?branch=main)](https://github.com/wwvo/scoop-cnb-rs/actions/workflows/validate-manifests.yml)
+[![Validate Scoop Hash And Install](https://github.com/wwvo/scoop-cnb-rs/actions/workflows/validate-hash-and-install.yml/badge.svg?branch=main)](https://github.com/wwvo/scoop-cnb-rs/actions/workflows/validate-hash-and-install.yml)
+
 [cnb-rs](https://cnb.cool/wwvo/cnb-rs/cnb-rs) 的 [Scoop](https://scoop.sh) Bucket。
 
 `cnb-rs` 是一个非官方的 [CNB (cnb.cool)](https://cnb.cool) 命令行工具。
