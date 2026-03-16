@@ -14,7 +14,7 @@ scoop install cnb-rs/cnb-rs
 ## 更新
 
 ```pwsh
-scoop update cnb-rs/cnb-rs
+scoop update cnb-rs
 ```
 
 ## 迁移提示
