@@ -1,0 +1,22 @@
+{
+  "version": "0.11.2",
+  "description": "An unofficial command line tool for CNB (cnb.cool) (GNU toolchain)",
+  "homepage": "https://cnb.wwvo.fun",
+  "license": "Apache-2.0",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.11.2/cnb-rs-v0.11.2-x86_64-pc-windows-gnu.zip",
+      "hash": "aa4428db443fa4a7f760b9f125205cb89039067217d066cb4b88b9872ae0337e",
+      "extract_dir": "cnb-rs-v0.11.2-x86_64-pc-windows-gnu"
+    },
+    "arm64": {
+      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.11.2/cnb-rs-v0.11.2-aarch64-pc-windows-gnullvm.zip",
+      "hash": "c9f393d04b55dce3770f982f1689e1f52ea89d09fead2bfa9e74214c7449331f",
+      "extract_dir": "cnb-rs-v0.11.2-aarch64-pc-windows-gnullvm"
+    }
+  },
+  "bin": [
+    "cnb-rs.exe"
+  ],
+  "notes": "The command has been renamed from `cnb` to `cnb-rs`. To keep using `cnb`, add `Set-Alias cnb cnb-rs` to your PowerShell profile."
+}
