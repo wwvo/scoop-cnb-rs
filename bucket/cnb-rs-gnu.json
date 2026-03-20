@@ -1,18 +1,18 @@
 {
-  "version": "0.5.0",
+  "version": "0.11.2",
   "description": "An unofficial command line tool for CNB (cnb.cool) (GNU toolchain)",
   "homepage": "https://cnb.wwvo.fun",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.5.0/cnb-rs-v0.5.0-x86_64-pc-windows-gnu.zip",
-      "hash": "64f84afa4b68935aaf9b26f1c6b8fa7995ba87621d5785b1546ce6f9b687b9a0",
-      "extract_dir": "cnb-rs-v0.5.0-x86_64-pc-windows-gnu"
+      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.11.2/cnb-rs-v0.11.2-x86_64-pc-windows-gnu.zip",
+      "hash": "aa4428db443fa4a7f760b9f125205cb89039067217d066cb4b88b9872ae0337e",
+      "extract_dir": "cnb-rs-v0.11.2-x86_64-pc-windows-gnu"
     },
     "arm64": {
-      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.5.0/cnb-rs-v0.5.0-aarch64-pc-windows-gnullvm.zip",
-      "hash": "177c39fd274d8d7af656ce4bb9bcbd03c8dec9e4e22ce0197d67637f4fe37909",
-      "extract_dir": "cnb-rs-v0.5.0-aarch64-pc-windows-gnullvm"
+      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.11.2/cnb-rs-v0.11.2-aarch64-pc-windows-gnullvm.zip",
+      "hash": "c9f393d04b55dce3770f982f1689e1f52ea89d09fead2bfa9e74214c7449331f",
+      "extract_dir": "cnb-rs-v0.11.2-aarch64-pc-windows-gnullvm"
     }
   },
   "bin": [

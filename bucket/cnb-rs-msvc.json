@@ -1,18 +1,18 @@
 {
-  "version": "0.5.0",
+  "version": "0.11.2",
   "description": "An unofficial command line tool for CNB (cnb.cool) (MSVC toolchain)",
   "homepage": "https://cnb.wwvo.fun",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.5.0/cnb-rs-v0.5.0-x86_64-pc-windows-msvc.zip",
-      "hash": "37bad1d7900348374bd3c0665fa07f5cbe945b563ae4c55a51e1116d92e59f68",
-      "extract_dir": "cnb-rs-v0.5.0-x86_64-pc-windows-msvc"
+      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.11.2/cnb-rs-v0.11.2-x86_64-pc-windows-msvc.zip",
+      "hash": "a0d5622ed4eecc9565a4489f9b3738bec100dccbaa1df4266ba294b9694c4771",
+      "extract_dir": "cnb-rs-v0.11.2-x86_64-pc-windows-msvc"
     },
     "arm64": {
-      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.5.0/cnb-rs-v0.5.0-aarch64-pc-windows-msvc.zip",
-      "hash": "7cea2522fd079f84bded60c5c8fb40e46ca60ae9f8e3334ce1440433ab012034",
-      "extract_dir": "cnb-rs-v0.5.0-aarch64-pc-windows-msvc"
+      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.11.2/cnb-rs-v0.11.2-aarch64-pc-windows-msvc.zip",
+      "hash": "93c718d8e0f49da6d25fa40020334df668b41aa0a6e5dc7517630026ced96138",
+      "extract_dir": "cnb-rs-v0.11.2-aarch64-pc-windows-msvc"
     }
   },
   "bin": [
