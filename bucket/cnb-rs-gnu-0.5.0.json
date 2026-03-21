@@ -1,8 +1,12 @@
 {
   "version": "0.5.0",
-  "description": "An unofficial command line tool for CNB (cnb.cool) (GNU toolchain)",
+  "description": "Unofficial CNB (cnb.cool) command-line tool built with Rust (GNU toolchain).",
   "homepage": "https://cnb.wwvo.fun",
   "license": "Apache-2.0",
+  "notes": [
+    "The command has been renamed from `cnb` to `cnb-rs`.",
+    "To keep using `cnb`, add `Set-Alias cnb cnb-rs` to your PowerShell profile."
+  ],
   "architecture": {
     "64bit": {
       "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.5.0/cnb-rs-v0.5.0-x86_64-pc-windows-gnu.zip",
@@ -15,8 +19,5 @@
       "extract_dir": "cnb-rs-v0.5.0-aarch64-pc-windows-gnullvm"
     }
   },
-  "bin": [
-    "cnb-rs.exe"
-  ],
-  "notes": "The command has been renamed from `cnb` to `cnb-rs`. To keep using `cnb`, add `Set-Alias cnb cnb-rs` to your PowerShell profile."
+  "bin": "cnb-rs.exe"
 }
