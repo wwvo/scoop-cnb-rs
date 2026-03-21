@@ -19,17 +19,45 @@ EXPECTED_README_SNIPPETS = [
 ]
 
 
+def normalize_bin_entries(value: object) -> list[str]:
+    if isinstance(value, str):
+        return [value]
+
+    if not isinstance(value, list):
+        return []
+
+    entries: list[str] = []
+    for item in value:
+        if isinstance(item, str):
+            entries.append(item)
+        elif isinstance(item, list) and item and isinstance(item[0], str):
+            entries.append(item[0])
+
+    return entries
+
+
+def normalize_notes_text(value: object) -> str:
+    if isinstance(value, str):
+        return value
+
+    if isinstance(value, list):
+        return "\n".join(item for item in value if isinstance(item, str))
+
+    return ""
+
+
 def validate_manifest(path: Path) -> list[str]:
     errors: list[str] = []
     data = json.loads(path.read_text(encoding="utf-8"))
 
-    bins = data.get("bin", [])
+    # Scoop manifests commonly allow both string and array forms here.
+    bins = normalize_bin_entries(data.get("bin", []))
     if "cnb-rs.exe" not in bins:
         errors.append(f"{path.name}: missing cnb-rs.exe in bin")
     if "git-cnb-rs.exe" in bins:
         errors.append(f"{path.name}: git-cnb-rs.exe must not appear in bin")
 
-    notes = data.get("notes", "")
+    notes = normalize_notes_text(data.get("notes", ""))
     if "hook" in notes.lower():
         errors.append(f"{path.name}: notes must not mention hook")
 
