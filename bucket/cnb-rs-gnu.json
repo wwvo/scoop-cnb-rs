@@ -1,5 +1,5 @@
 {
-  "version": "0.11.3",
+  "version": "0.12.1",
   "description": "Unofficial CNB (cnb.cool) command-line tool built with Rust (GNU toolchain).",
   "homepage": "https://cnb.wwvo.fun",
   "license": "Apache-2.0",
@@ -9,14 +9,14 @@
   ],
   "architecture": {
     "64bit": {
-      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.11.3/cnb-rs-v0.11.3-x86_64-pc-windows-gnu.zip",
-      "hash": "7afde4bcb4bad5e8651c6fa20a952d0be65b20dc6f0f66e85f14153554fb6b0c",
-      "extract_dir": "cnb-rs-v0.11.3-x86_64-pc-windows-gnu"
+      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.12.1/cnb-rs-v0.12.1-x86_64-pc-windows-gnu.zip",
+      "hash": "10c1c32a8ce1ffe712985631a9f57c1b7dd074609c073dc9df9d9892fb375e0c",
+      "extract_dir": "cnb-rs-v0.12.1-x86_64-pc-windows-gnu"
     },
     "arm64": {
-      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.11.3/cnb-rs-v0.11.3-aarch64-pc-windows-gnullvm.zip",
-      "hash": "24cfa4ed43b042c401dc1449d4d641bfe6e55d42bf0eac3a24c59c90a148f88c",
-      "extract_dir": "cnb-rs-v0.11.3-aarch64-pc-windows-gnullvm"
+      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.12.1/cnb-rs-v0.12.1-aarch64-pc-windows-gnullvm.zip",
+      "hash": "69d1fe95d3443e6522e4c73e72c7b6c2acddbb25ce46db0e7201d3b5de46daee",
+      "extract_dir": "cnb-rs-v0.12.1-aarch64-pc-windows-gnullvm"
     }
   },
   "bin": "cnb-rs.exe"

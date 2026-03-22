@@ -1,0 +1,26 @@
+{
+  "version": "0.11.3",
+  "description": "Unofficial CNB (cnb.cool) command-line tool built with Rust (MSVC toolchain).",
+  "homepage": "https://cnb.wwvo.fun",
+  "license": "Apache-2.0",
+  "notes": [
+    "The command has been renamed from `cnb` to `cnb-rs`.",
+    "To keep using `cnb`, add `Set-Alias cnb cnb-rs` to your PowerShell profile."
+  ],
+  "suggest": {
+    "vcredist": "extras/vcredist2022"
+  },
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.11.3/cnb-rs-v0.11.3-x86_64-pc-windows-msvc.zip",
+      "hash": "7877aa5964756af72891bc9db3faa9e9f102b2df3269500134aab35bdc1e42dd",
+      "extract_dir": "cnb-rs-v0.11.3-x86_64-pc-windows-msvc"
+    },
+    "arm64": {
+      "url": "https://github.com/wwvo/cnb-rs/releases/download/v0.11.3/cnb-rs-v0.11.3-aarch64-pc-windows-msvc.zip",
+      "hash": "bebc109330637f676affdadfa7750a7afd79828957f20bf494c6a5e273f9f111",
+      "extract_dir": "cnb-rs-v0.11.3-aarch64-pc-windows-msvc"
+    }
+  },
+  "bin": "cnb-rs.exe"
+}
